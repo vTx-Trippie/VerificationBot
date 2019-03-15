@@ -1,0 +1,16 @@
+{
+  "name": "verification-bot",
+  "version": "1.0.0",
+  "description": "Verification-bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Trippie#5609",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "fs": "0.0.1-security",
+    "mysql": "^2.16.0"
+  }
+}
