@@ -1,30 +1,28 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js');
+const Endb = require('endb');
+const settings = new Endb.Database({
+    name: 'settings',
+    fileName: 'settings',
+    path: './data'
+});
 
-module.exports.run = async (bot, message, args, con) => {
+module.exports.run = async (bot, message, args) => {
+    let verifyrole = settings.get(`verifyrole_${message.guild.id}`);
 
-  con.query("SELECT * FROM settings", (err, results) => {
-    if (err) return console.error(err);
-    settings = results;
-  });
+    let vrole = message.guild.roles.find('name', verifyrole);
+    if (message.member.roles.has(vrole.id)) return message.reply("You are already verified");
+    await (message.member.addRole(vrole.id));
 
-  con.query(`SELECT verifyrole FROM settings WHERE serverid = ${message.guild.id}`, async (err, results) => {
-    let verifyrole = results[0].verifyrole;
-
-    let vrole = message.guild.roles.find(`name`, verifyrole);
-
-    if(message.member.roles.has(vrole.id)) return message.reply("You are already verified");
-    await(message.member.addRole(vrole.id));
-
-  let addEmbed = new Discord.RichEmbed()
-  .setDescription("Verification")
-  .setColor("RED")
-  .addField("User Verified", `${message.author}`)
-  message.channel.send(addEmbed)
-  })
-
-
+    let addEmbed = new Discord.RichEmbed()
+        .setDescription("Verification")
+        .setColor("RANDOM")
+        .addField("User Verified", `${message.author}`)
+    message.channel.send(addEmbed);
 }
 
-module.exports.help = {
-  name: "verify"
+module.exports.conf = {
+    name: 'verify',
+    description: 'adds a role to the user when they run the command',
+    usage: 'verify',
+    aliases: ['vfy']
 }

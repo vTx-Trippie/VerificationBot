@@ -1,4 +1,4 @@
 title Trippie
 color b
-node index.js
+nodemon index.js
 pause

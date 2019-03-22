@@ -1,16 +1,18 @@
 {
-  "name": "verification-bot",
+  "name": "verificationbot",
   "version": "1.0.0",
-  "description": "Verification-bot",
+  "description": "A Verification Bot made with discord.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Trippie#5609",
+  "author": "Trippie",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.4.2",
+    "endb": "0.0.15",
     "fs": "0.0.1-security",
-    "mysql": "^2.16.0"
+    "moment": "^2.24.0",
+    "ms": "^2.1.1"
   }
 }

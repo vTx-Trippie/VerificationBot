@@ -1,7 +1,4 @@
 {
-    "token": "Yourtoken",
-    "host": "127.0.0.1",
-    "user": "root",
-    "password": "",
-    "database": "VerificationBot"
+    "token": "Your Token",
+    "prefix": "v!"
 }
