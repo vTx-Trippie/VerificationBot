@@ -15,3 +15,4 @@ https://discord.gg/4BVRUq6
 
 Discord: Trippie#5609
 
+[![Run on Repl.it](https://repl.it/badge/github/Hycore-Development/VerificationBot)](https://repl.it/github/Hycore-Development/VerificationBot)
